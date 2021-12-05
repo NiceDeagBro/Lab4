@@ -35,12 +35,17 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
 
     @Override
     public void onBindViewHolder(@NonNull NoteViewHolder holder, int position) {
-
+        holder.setNote(notes.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return notes.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     static class NoteViewHolder extends RecyclerView.ViewHolder {
